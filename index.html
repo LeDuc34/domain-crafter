@@ -1,0 +1,1705 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Domain Crafter - Create Perfect Domain Names | craft.botly.app
+    </title>
+    <meta
+            name="description"
+            content="Domain Crafter helps you generate creative, brandable, and available domain names. Instantly explore thousands of smart domain combinations, check availability, and find the perfect name for your project."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#eff6ff',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+              },
+              secondary: {
+                50: '#f0fdf4',
+                500: '#10b981',
+                600: '#059669',
+              },
+              dark: {
+                50: '#f8fafc',
+                100: '#f1f5f9',
+                800: '#1e293b',
+                900: '#0f172a',
+              },
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in forwards',
+              'fade-out': 'fadeOut 0.5s ease-in-out',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        .gradient-bg {
+            background: linear-gradient(
+                    135deg,
+                    #ec4899 0%,
+                    #db2777 50%,
+                    #be185d 100%
+            );
+        }
+        .card-gradient {
+            background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0.05) 100%
+            );
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .card-gradient {
+            background: linear-gradient(
+                    135deg,
+                    rgba(30, 41, 59, 0.8) 0%,
+                    rgba(51, 65, 85, 0.6) 100%
+            );
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .form-select {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .form-select:focus {
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        .dark .form-select {
+            border-color: #4b5563;
+            background-color: #1e293b;
+            color: white;
+        }
+        .gradient-btn {
+            background: linear-gradient(to right, #10b981, #059669);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .gradient-btn:hover {
+            background: linear-gradient(to right, #059669, #047857);
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .checkbox-container input {
+            margin-right: 0.5rem;
+            border-radius: 0.25rem;
+        }
+        .checkbox-container span {
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body
+        class="bg-gray-50 dark:bg-dark-900 min-h-screen transition-colors duration-300"
+>
+<!-- Theme Toggle -->
+<div id="themeToggleContainer" class="fixed top-4 right-4 z-50 hidden">
+    <button
+            id="themeToggle"
+            class="p-2 rounded-full bg-white dark:bg-dark-800 shadow-lg hover:shadow-xl transition-all duration-300"
+    >
+        <svg
+                id="sunIcon"
+                class="w-6 h-6 text-yellow-500 hidden dark:block"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+        >
+            <path
+                    fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+            ></path>
+        </svg>
+        <svg
+                id="moonIcon"
+                class="w-6 h-6 text-gray-700 dark:hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+        >
+            <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+        </svg>
+    </button>
+</div>
+
+<!-- Hero Section -->
+<div
+        id="heroSection"
+        class="gradient-bg min-h-screen flex items-center justify-center px-4"
+>
+    <div class="text-center text-white max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">Domain Crafter</h1>
+        <p
+                class="text-xl md:text-2xl mb-8 opacity-90"
+                style="animation-delay: 0.2s"
+        >
+            Forge the perfect domain name with AI-powered creativity
+        </p>
+        <p class="text-lg mb-12 opacity-80" style="animation-delay: 0.4s">
+            Generate thousands of domain combinations with beautiful letter
+            patterns, smart suggestions, and instant availability checking
+        </p>
+        <button
+                id="startBtn"
+                class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                style="animation-delay: 0.6s"
+        >
+            Start Creating →
+        </button>
+    </div>
+</div>
+
+<!-- Main App (Hidden initially) -->
+<div id="mainApp" class="hidden">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1
+                    class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+            >
+                Domain Crafter
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300">
+                Create the perfect domain name with intelligent letter combinations
+            </p>
+        </div>
+
+        <!-- Controls Panel -->
+        <div class="card-gradient rounded-2xl shadow-xl p-6 mb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6">
+                <!-- Domain Length Range -->
+                <div>
+                    <label
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
+                    >
+                        Domain Length Range
+                    </label>
+                    <div class="flex items-center space-x-3">
+                        <select id="minLength" class="form-select">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected>5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                        <span class="text-gray-500 dark:text-gray-400">to</span>
+                        <select id="maxLength" class="form-select">
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6" selected>6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- TLD Selection -->
+                <div>
+                    <label
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
+                    >
+                        Top Level Domains
+                    </label>
+                    <div
+                            id="tldContainer"
+                            class="grid grid-cols-2 gap-2 max-h-32 overflow-y-auto text-gray-900 dark:text-white mb-3"
+                    ></div>
+                    <div class="flex space-x-2">
+                        <input
+                                type="text"
+                                id="customTldInput"
+                                placeholder="Add custom TLD (e.g., .xyz)"
+                                class="form-select text-sm"
+                        />
+                        <button id="addCustomTldBtn" class="gradient-btn text-sm">
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div>
+                    <label
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
+                    >
+                        Generation Options
+                    </label>
+                    <div
+                            id="optionsContainer"
+                            class="space-y-2 text-gray-900 dark:text-white"
+                    ></div>
+                </div>
+
+                <!-- Keywords -->
+                <div>
+                    <label
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
+                    >
+                        Keywords (Optional)
+                    </label>
+                    <div class="space-y-2">
+                        <input
+                                type="text"
+                                id="keywordsInput"
+                                placeholder="Enter keywords separated by commas (e.g., bot, ai, tech)"
+                                class="form-select w-full text-sm"
+                        />
+                        <p class="text-xs text-gray-500 dark:text-gray-400">
+                            Keywords will be incorporated into domain generation. Leave
+                            empty for random generation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Generate Button -->
+                <div class="flex items-end">
+                    <button
+                            id="generateBtn"
+                            class="gradient-btn w-full py-3 px-6 font-semibold shadow-lg transform hover:scale-105"
+                    >
+                        Generate Domains
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div id="progressSection" class="hidden">
+            <div class="card-gradient rounded-2xl shadow-xl p-8 text-center">
+                <div class="mb-6">
+                    <div
+                            class="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"
+                    ></div>
+                    <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+                            id="progressTitle"
+                    >
+                        Generating domains...
+                    </h3>
+                    <p
+                            class="text-gray-600 dark:text-gray-300 mb-4"
+                            id="progressMessage"
+                    >
+                        Creating beautiful combinations...
+                    </p>
+                    <div
+                            class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-4"
+                    >
+                        <div
+                                id="progressBar"
+                                class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full transition-all duration-300"
+                                style="width: 0%"
+                        ></div>
+                    </div>
+                    <p
+                            class="text-sm text-gray-500 dark:text-gray-400"
+                            id="progressStats"
+                    >
+                        0 domains generated
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden">
+            <!-- Stats -->
+            <div class="card-gradient rounded-xl shadow-lg p-4 mb-6">
+                <div
+                        class="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0"
+                >
+                    <div class="text-sm text-gray-600 dark:text-gray-300">
+                        <span id="totalResults">0</span> domains generated
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-gradient rounded-xl shadow-lg p-6">
+                <!-- Pagination (Top) -->
+                <div
+                        id="paginationTop"
+                        class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 mb-4"
+                >
+                    <div class="text-sm text-gray-600 dark:text-gray-300">
+                        Page <span class="currentPage">1</span> of
+                        <span class="totalPages">1</span>
+                    </div>
+                    <div class="flex space-x-2 text-gray-700 dark:text-gray-300">
+                        <button
+                                class="prevPage px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-dark-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        >
+                            Previous
+                        </button>
+                        <button
+                                class="nextPage px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-dark-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        >
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Grid -->
+                <div
+                        id="resultsGrid"
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6"
+                >
+                    <!-- Results will be populated here -->
+                </div>
+
+                <!-- Pagination (Bottom) -->
+                <div
+                        id="paginationBottom"
+                        class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0"
+                >
+                    <div class="text-sm text-gray-600 dark:text-gray-300">
+                        Page <span class="currentPage">1</span> of
+                        <span class="totalPages">1</span>
+                    </div>
+                    <div class="flex space-x-2 text-gray-700 dark:text-gray-300">
+                        <button
+                                class="prevPage px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-dark-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        >
+                            Previous
+                        </button>
+                        <button
+                                class="nextPage px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-dark-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        >
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liked Domains Section -->
+        <div id="likedSection" class="mt-8 hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+                    Your Liked Domains
+                </h2>
+                <button
+                        id="clearLikesBtn"
+                        class="text-sm bg-gradient-to-r from-red-500 to-pink-600 text-white px-3 py-1 rounded-lg hover:from-red-600 hover:to-pink-700 transition-all duration-200"
+                >
+                    Clear Likes
+                </button>
+            </div>
+            <div class="card-gradient rounded-xl shadow-lg p-6">
+                <div
+                        id="likedGrid"
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6"
+                >
+                    <!-- Liked domains will be populated here -->
+                </div>
+
+                <!-- Custom Domain Entry -->
+                <div class="border-t border-gray-200 dark:border-gray-600 pt-6">
+                    <h3
+                            class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+                    >
+                        Add Custom Domain
+                    </h3>
+                    <div
+                            class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2"
+                    >
+                        <input
+                                type="text"
+                                id="customDomain"
+                                placeholder="Enter full domain (e.g., mydomain.com or mydomain.xyz)"
+                                class="form-select"
+                        />
+                        <button id="addCustomBtn" class="gradient-btn px-6 py-2">
+                            Add to Likes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  class DomainForge {
+    constructor() {
+      this.results = [];
+      this.likedDomains = new Set();
+      this.currentPage = 1;
+      this.itemsPerPage = 20;
+
+      // Default TLDs and options
+      this.defaultTlds = [
+        { value: '.com', checked: true },
+        { value: '.ai', checked: true },
+        { value: '.io', checked: true },
+        { value: '.dev', checked: false },
+        { value: '.app', checked: false },
+        { value: '.net', checked: false },
+        { value: '.org', checked: false },
+        { value: '.co', checked: false },
+      ];
+
+      this.options = [
+        {
+          id: 'beautifulCombinations',
+          label: 'Valid letter combinations',
+          checked: true,
+        },
+        { id: 'includeNumbers', label: 'Include numbers', checked: false },
+        { id: 'includeHyphens', label: 'Include hyphens', checked: false },
+        { id: 'useSuffixes', label: 'Use suffixes', checked: false },
+        { id: 'usePrefixes', label: 'Use prefixes', checked: false },
+      ];
+
+      // Configuration
+      this.config = {
+        suffixes: [
+          'ly',
+          'app',
+          'labs',
+          'hub',
+          'pro',
+          'tech',
+          'ai',
+          'io',
+          'co',
+        ],
+        prefixes: [
+          'i',
+          'try',
+          'use',
+          'get',
+          'my',
+          'the',
+          'best',
+          'top',
+          'smart',
+          'quick',
+        ],
+        substitutions: {
+          l: '1',
+          o: '0',
+          s: 'z',
+          u: 'oo',
+          oo: 'u',
+          ks: 'x',
+          x: 'ks',
+          ph: 'f',
+          c: 'k',
+          k: 'c',
+          v: 'w',
+          w: 'v',
+          f: 'ph',
+          y: 'i',
+          too: '2',
+          to: '2',
+          for: '4',
+          you: 'u',
+          be: 'b',
+          er: 'r',
+          ers: 'rz',
+          ing: 'n',
+          es: 'z',
+        },
+        consonantClusters: [
+          'st',
+          'sp',
+          'bl',
+          'br',
+          'cl',
+          'cr',
+          'dr',
+          'fl',
+          'fr',
+          'gl',
+          'gr',
+          'pl',
+          'pr',
+          'sc',
+          'sk',
+          'sl',
+          'sm',
+          'sn',
+          'sw',
+          'tr',
+          'tw',
+          'ch',
+          'sh',
+          'th',
+          'wh',
+          'ng',
+          'nk',
+          'str',
+          'spl',
+          'scr',
+          'spr',
+          'shr',
+          'thr',
+          'll',
+          'rr',
+          'ff',
+          'ss',
+          'tt',
+          'pp',
+          'mm',
+          'nn',
+        ],
+        vowelClusters: [
+          'ai',
+          'ea',
+          'ee',
+          'oa',
+          'oo',
+          'ou',
+          'ow',
+          'ie',
+          'oe',
+          'ay',
+          'ey',
+          'oi',
+          'oy',
+          'au',
+          'eu',
+          'ue',
+        ],
+        progressMessages: [
+          'Generating beautiful combinations...',
+          'Creating consonant clusters...',
+          'Adding vowel harmonies...',
+          'Almost there...',
+          'Finalizing your domains...',
+          'Just a little bit more...',
+          'Preparing your results...',
+        ],
+      };
+
+      this.initializeUI();
+      this.loadLikedDomains();
+      this.bindEvents();
+      this.initTheme();
+    }
+
+    initializeUI() {
+      this.createTldCheckboxes();
+      this.createOptionCheckboxes();
+    }
+
+    createTldCheckboxes() {
+      const container = document.getElementById('tldContainer');
+      this.defaultTlds.forEach((tld) => {
+        const label = this.createCheckbox(
+          tld.value,
+          tld.value,
+          tld.checked
+        );
+        container.appendChild(label);
+      });
+    }
+
+    createOptionCheckboxes() {
+      const container = document.getElementById('optionsContainer');
+      this.options.forEach((option) => {
+        const label = this.createCheckbox(
+          option.id,
+          option.label,
+          option.checked
+        );
+        container.appendChild(label);
+      });
+    }
+
+    createCheckbox(id, label, checked = false) {
+      const labelElement = document.createElement('label');
+      labelElement.className =
+        'checkbox-container text-gray-900 dark:text-white';
+      labelElement.innerHTML = `
+            <input type="checkbox" ${id.startsWith('.') ? `value="${id}"` : `id="${id}"`} ${checked ? 'checked' : ''} class="mr-2 rounded" />
+            <span class="text-sm">${label}</span>
+          `;
+      return labelElement;
+    }
+
+    initTheme() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+
+      document
+        .getElementById('themeToggle')
+        .addEventListener('click', () => {
+          document.documentElement.classList.toggle('dark');
+          const isDark =
+            document.documentElement.classList.contains('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    }
+
+    bindEvents() {
+      document.getElementById('startBtn').addEventListener('click', () => {
+        document.getElementById('heroSection').classList.add('hidden');
+        document.getElementById('mainApp').classList.remove('hidden');
+        document
+          .getElementById('themeToggleContainer')
+          .classList.remove('hidden');
+      });
+
+      document
+        .getElementById('generateBtn')
+        .addEventListener('click', () => this.generateDomains());
+      Array.from(document.getElementsByClassName('prevPage')).forEach(
+        (btn) => {
+          btn.addEventListener('click', () => this.previousPage());
+        }
+      );
+      Array.from(document.getElementsByClassName('nextPage')).forEach(
+        (btn) => {
+          btn.addEventListener('click', () => this.nextPage());
+        }
+      );
+      document
+        .getElementById('clearLikesBtn')
+        .addEventListener('click', () => this.clearLikes());
+      document
+        .getElementById('addCustomBtn')
+        .addEventListener('click', () => this.addCustomDomain());
+
+      // Handle custom TLD addition
+      document
+        .getElementById('addCustomTldBtn')
+        .addEventListener('click', () => this.addCustomTld());
+
+      // Handle Enter key for inputs
+      document
+        .getElementById('customDomain')
+        .addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            this.addCustomDomain();
+          }
+        });
+      document
+        .getElementById('customTldInput')
+        .addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            this.addCustomTld();
+          }
+        });
+      document
+        .getElementById('keywordsInput')
+        .addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            // Optionally trigger domain generation or just parse keywords
+            this.generateDomains();
+          }
+        });
+    }
+
+    loadLikedDomains() {
+      const stored = localStorage.getItem('likedDomains');
+      if (stored) {
+        this.likedDomains = new Set(JSON.parse(stored));
+        this.updateLikedSection();
+      }
+    }
+
+    saveLikedDomains() {
+      localStorage.setItem(
+        'likedDomains',
+        JSON.stringify([...this.likedDomains])
+      );
+    }
+
+    async generateDomains() {
+      const options = this.getGenerationOptions();
+
+      if (!this.validateOptions(options)) {
+        return;
+      }
+
+      // Show progress
+      document.getElementById('progressSection').classList.remove('hidden');
+      document.getElementById('resultsSection').classList.add('hidden');
+      this.updateProgress(0, 100);
+
+      this.results = [];
+      let generatedCount = 0;
+      const maxTotalDomains = 99999;
+
+      // Generate domains for each length
+      for (
+        let length = options.minLength;
+        length <= options.maxLength;
+        length++
+      ) {
+        if (this.results.length >= maxTotalDomains) break;
+
+        const count = await this.generateDomainsForLength(length, options);
+        generatedCount += count;
+        this.updateProgress(generatedCount, maxTotalDomains);
+      }
+
+      // Shuffle results for variety
+      this.shuffleArray(this.results);
+
+      // Show results
+      document.getElementById('progressSection').classList.add('hidden');
+      this.currentPage = 1;
+      this.displayResults();
+      this.updateStats();
+    }
+
+    getGenerationOptions() {
+      return {
+        minLength: parseInt(document.getElementById('minLength').value),
+        maxLength: parseInt(document.getElementById('maxLength').value),
+        tlds: Array.from(
+          document.querySelectorAll(
+            'input[type="checkbox"][value^="."]:checked'
+          )
+        ).map((cb) => cb.value),
+        beautifulCombinations: document.getElementById(
+          'beautifulCombinations'
+        ).checked,
+        includeNumbers: document.getElementById('includeNumbers').checked,
+        includeHyphens: document.getElementById('includeHyphens').checked,
+        useSuffixes: document.getElementById('useSuffixes').checked,
+        usePrefixes: document.getElementById('usePrefixes').checked,
+        keywords: this.parseKeywords(
+          document.getElementById('keywordsInput').value
+        ),
+      };
+    }
+
+    parseKeywords(keywordsInput) {
+      if (!keywordsInput.trim()) return [];
+      return keywordsInput
+        .split(/[, ]+/) // split by comma or space
+        .map((k) => k.trim().toLowerCase())
+        .filter((k) => k.length > 0);
+    }
+
+    validateOptions(options) {
+      if (options.tlds.length === 0) {
+        alert('Please select at least one TLD');
+        return false;
+      }
+
+      if (options.minLength > options.maxLength) {
+        alert('Minimum length cannot be greater than maximum length');
+        return false;
+      }
+
+      return true;
+    }
+
+    async generateDomainsForLength(length, options) {
+      let generatedCount = 0;
+      const maxDomainsPerLength = 9999;
+
+      // Generate base domains
+      if (options.keywords.length > 0) {
+        generatedCount += this.generateKeywordBasedDomains(length, options);
+      } else {
+        generatedCount += this.generateRandomDomains(length, options);
+      }
+
+      // Add variations with suffixes
+      if (options.useSuffixes) {
+        generatedCount += this.generateSuffixVariations(length, options);
+      }
+
+      // Add variations with prefixes
+      if (options.usePrefixes) {
+        generatedCount += this.generatePrefixVariations(length, options);
+      }
+
+      // Add hyphenated variations
+      if (options.includeHyphens && length > 2) {
+        generatedCount += this.generateHyphenatedVariations(
+          length,
+          options
+        );
+      }
+
+      return generatedCount;
+    }
+
+    generateKeywordBasedDomains(length, options) {
+      let count = 0;
+      const maxDomainsPerKeyword = 5000; // Generate more domains per keyword
+
+      for (const keyword of options.keywords) {
+        if (this.results.length >= 99999) break;
+
+        // Generate multiple variations of the keyword
+        const variations = this.generateKeywordVariations(
+          keyword,
+          length,
+          options
+        );
+
+        // Generate additional random combinations that include the keyword
+        const additionalVariations =
+          this.generateAdditionalKeywordCombinations(
+            keyword,
+            length,
+            options,
+            maxDomainsPerKeyword
+          );
+
+        const allVariations = [...variations, ...additionalVariations];
+
+        for (const variation of allVariations) {
+          if (count >= maxDomainsPerKeyword) break;
+
+          for (const tld of options.tlds) {
+            this.results.push(variation + tld);
+            count++;
+          }
+        }
+      }
+
+      return count;
+    }
+
+    generateKeywordVariations(keyword, targetLength, options) {
+      const variations = new Set();
+      const keywordLength = keyword.length;
+
+      if (keywordLength <= targetLength) {
+        variations.add(keyword);
+      }
+
+      if (keywordLength < targetLength) {
+        const remainingLength = targetLength - keywordLength;
+        for (let i = 0; i < 10; i++) {
+          const randomPart = this.generateStringPart(
+            remainingLength,
+            options
+          );
+          variations.add(keyword + randomPart);
+          variations.add(randomPart + keyword);
+        }
+      }
+
+      if (options.includeHyphens && keywordLength < targetLength - 1) {
+        const remainingLength = targetLength - keywordLength - 1;
+        if (remainingLength > 0) {
+          for (let i = 0; i < 5; i++) {
+            const randomPart = this.generateStringPart(
+              remainingLength,
+              options
+            );
+            variations.add(keyword + '-' + randomPart);
+            variations.add(randomPart + '-' + keyword);
+          }
+        }
+      }
+
+      return Array.from(variations);
+    }
+
+    applySubstitutions(text, maxLength) {
+      const variations = [];
+      for (const [letter, replacement] of Object.entries(
+        this.config.substitutions
+      )) {
+        if (text.includes(letter)) {
+          const variation = text.replace(
+            new RegExp(letter, 'g'),
+            replacement
+          );
+          if (variation.length <= maxLength) {
+            variations.push(variation);
+          }
+        }
+      }
+      return variations;
+    }
+
+    generateStringPart(length, options) {
+      return options.beautifulCombinations
+        ? this.generateValidCombination(length, options.includeNumbers)
+        : this.generateRandomString(
+          options.includeNumbers
+            ? 'abcdefghijklmnopqrstuvwxyz0123456789'
+            : 'abcdefghijklmnopqrstuvwxyz',
+          length
+        );
+    }
+
+    generateAdditionalKeywordCombinations(
+      keyword,
+      targetLength,
+      options,
+      maxCount
+    ) {
+      const combinations = new Set();
+      const strategies = [
+        () =>
+          this.combineKeywordWithRandom(
+            keyword,
+            targetLength,
+            options,
+            true
+          ),
+        () =>
+          this.combineKeywordWithRandom(
+            keyword,
+            targetLength,
+            options,
+            false
+          ),
+        () => this.insertNumbersInKeyword(keyword, targetLength, options),
+        () => this.applySubstitutions(keyword, targetLength)[0],
+        () => this.combineKeywordWithHyphen(keyword, targetLength, options),
+        () => this.embedKeywordInRandom(keyword, targetLength, options),
+      ];
+
+      for (
+        let attempt = 0;
+        attempt < 2000 && combinations.size < maxCount;
+        attempt++
+      ) {
+        const strategy =
+          strategies[Math.floor(Math.random() * strategies.length)];
+        const combination = strategy();
+        if (combination && combination.length === targetLength) {
+          combinations.add(combination);
+        }
+      }
+
+      return Array.from(combinations);
+    }
+
+    combineKeywordWithRandom(keyword, targetLength, options, keywordFirst) {
+      if (keyword.length >= targetLength) return null;
+      const remainingLength = targetLength - keyword.length;
+      const randomPart = this.generateStringPart(remainingLength, options);
+      return keywordFirst ? keyword + randomPart : randomPart + keyword;
+    }
+
+    insertNumbersInKeyword(keyword, targetLength, options) {
+      if (!options.includeNumbers || keyword.length >= targetLength)
+        return null;
+      let modified = keyword;
+      const numToInsert = Math.min(2, targetLength - keyword.length);
+      for (let i = 0; i < numToInsert; i++) {
+        const pos = Math.floor(Math.random() * modified.length);
+        const num = Math.floor(Math.random() * 10);
+        modified = modified.slice(0, pos) + num + modified.slice(pos);
+      }
+      return modified;
+    }
+
+    combineKeywordWithHyphen(keyword, targetLength, options) {
+      if (!options.includeHyphens || keyword.length >= targetLength - 1)
+        return null;
+      const remainingLength = targetLength - keyword.length - 1;
+      const randomPart = this.generateStringPart(remainingLength, options);
+      return keyword + '-' + randomPart;
+    }
+
+    embedKeywordInRandom(keyword, targetLength, options) {
+      if (keyword.length >= targetLength) return null;
+      const remainingLength = targetLength - keyword.length;
+      const beforeLength = Math.floor(
+        Math.random() * (remainingLength + 1)
+      );
+      const afterLength = remainingLength - beforeLength;
+
+      const beforePart =
+        beforeLength > 0
+          ? this.generateStringPart(beforeLength, options)
+          : '';
+      const afterPart =
+        afterLength > 0
+          ? this.generateStringPart(afterLength, options)
+          : '';
+
+      return beforePart + keyword + afterPart;
+    }
+
+    generateRandomDomains(length, options) {
+      let count = 0;
+      const maxAttempts = 999;
+
+      for (
+        let attempt = 0;
+        attempt < maxAttempts && count < 9999;
+        attempt++
+      ) {
+        let domain;
+
+        if (options.beautifulCombinations) {
+          domain = this.generateValidCombination(
+            length,
+            options.includeNumbers
+          );
+        } else {
+          domain = this.generateRandomString(
+            options.includeNumbers
+              ? 'abcdefghijklmnopqrstuvwxyz0123456789'
+              : 'abcdefghijklmnopqrstuvwxyz',
+            length
+          );
+        }
+
+        if (domain && !this.results.includes(domain)) {
+          for (const tld of options.tlds) {
+            this.results.push(domain + tld);
+            count++;
+          }
+        }
+      }
+
+      return count;
+    }
+
+    generateSuffixVariations(length, options) {
+      let count = 0;
+
+      for (const suffix of this.config.suffixes) {
+        const baseLength = length - suffix.length;
+        if (baseLength <= 0) continue;
+
+        const baseDomains = this.generateBaseDomains(baseLength, options);
+
+        for (const baseDomain of baseDomains) {
+          const domain = baseDomain + suffix;
+          for (const tld of options.tlds) {
+            this.results.push(domain + tld);
+            count++;
+          }
+        }
+      }
+
+      return count;
+    }
+
+    generatePrefixVariations(length, options) {
+      let count = 0;
+
+      for (const prefix of this.config.prefixes) {
+        const baseLength = length - prefix.length;
+        if (baseLength <= 0) continue;
+
+        const baseDomains = this.generateBaseDomains(baseLength, options);
+
+        for (const baseDomain of baseDomains) {
+          const domain = prefix + baseDomain;
+          for (const tld of options.tlds) {
+            this.results.push(domain + tld);
+            count++;
+          }
+        }
+      }
+
+      return count;
+    }
+
+    generateHyphenatedVariations(length, options) {
+      let count = 0;
+
+      for (let i = 1; i < length - 1; i++) {
+        const part1Length = i;
+        const part2Length = length - i - 1;
+
+        const part1Domains = this.generateBaseDomains(part1Length, options);
+        const part2Domains = this.generateBaseDomains(part2Length, options);
+
+        for (const part1 of part1Domains) {
+          for (const part2 of part2Domains) {
+            const domain = part1 + '-' + part2;
+            for (const tld of options.tlds) {
+              this.results.push(domain + tld);
+              count++;
+            }
+          }
+        }
+      }
+
+      return count;
+    }
+
+    generateBaseDomains(length, options) {
+      const domains = new Set();
+      const maxAttempts = 100;
+
+      for (
+        let attempt = 0;
+        attempt < maxAttempts && domains.size < 50;
+        attempt++
+      ) {
+        let domain;
+
+        if (options.beautifulCombinations) {
+          domain = this.generateValidCombination(
+            length,
+            options.includeNumbers
+          );
+        } else {
+          domain = this.generateRandomString(
+            options.includeNumbers
+              ? 'abcdefghijklmnopqrstuvwxyz0123456789'
+              : 'abcdefghijklmnopqrstuvwxyz',
+            length
+          );
+        }
+
+        if (domain) {
+          domains.add(domain);
+        }
+      }
+
+      return Array.from(domains);
+    }
+
+    generateValidCombination(length, includeNumbers = false) {
+      const vowels = 'aeiou';
+      const consonants = includeNumbers
+        ? 'bcdfghjklmnpqrstvwxyz0123456789'
+        : 'bcdfghjklmnpqrstvwxyz';
+
+      const maxAttempts = 100;
+
+      for (let attempt = 0; attempt < maxAttempts; attempt++) {
+        let combination = '';
+        let remainingLength = length;
+        let lastType = null; // 'vowel' or 'consonant'
+
+        while (remainingLength > 0) {
+          let nextType;
+          if (!lastType) {
+            nextType = Math.random() < 0.5 ? 'vowel' : 'consonant';
+          } else {
+            nextType = lastType === 'vowel' ? 'consonant' : 'vowel';
+          }
+
+          // Try cluster if possible
+          if (
+            nextType === 'vowel' &&
+            remainingLength >= 2 &&
+            Math.random() < 0.4
+          ) {
+            const cluster = this.config.vowelClusters.find(
+              (c) => c.length <= remainingLength
+            );
+            if (cluster) {
+              combination += cluster;
+              remainingLength -= cluster.length;
+              lastType = 'vowel';
+              continue;
+            }
+          }
+          if (
+            nextType === 'consonant' &&
+            remainingLength >= 2 &&
+            Math.random() < 0.4
+          ) {
+            const cluster = this.config.consonantClusters.find(
+              (c) => c.length <= remainingLength
+            );
+            if (cluster) {
+              combination += cluster;
+              remainingLength -= cluster.length;
+              lastType = 'consonant';
+              continue;
+            }
+          }
+
+          // Add single letter
+          if (nextType === 'vowel') {
+            combination +=
+              vowels[Math.floor(Math.random() * vowels.length)];
+            lastType = 'vowel';
+          } else {
+            combination +=
+              consonants[Math.floor(Math.random() * consonants.length)];
+            lastType = 'consonant';
+          }
+          remainingLength--;
+        }
+
+        if (this.isValidCombination(combination)) {
+          return combination;
+        }
+      }
+
+      // Fallback
+      return this.generateRandomString(
+        includeNumbers
+          ? 'abcdefghijklmnopqrstuvwxyz0123456789'
+          : 'abcdefghijklmnopqrstuvwxyz',
+        length
+      );
+    }
+
+    isValidCombination(combination) {
+      // Check for repeated letters (more than 3 of the same letter)
+      for (let i = 0; i < combination.length - 3; i++) {
+        if (
+          combination[i] === combination[i + 1] &&
+          combination[i] === combination[i + 2] &&
+          combination[i] === combination[i + 3]
+        ) {
+          return false; // More than 3 repeated letters
+        }
+      }
+
+      // Check for invalid consonant sequences (more than 3 consonants in a row)
+      let consonantCount = 0;
+      for (let i = 0; i < combination.length; i++) {
+        const char = combination[i];
+        const isConsonant = 'bcdfghjklmnpqrstvwxyz'.includes(char);
+
+        if (isConsonant) {
+          consonantCount++;
+          if (consonantCount > 3) {
+            return false; // Too many consonants in a row
+          }
+        } else {
+          consonantCount = 0;
+        }
+      }
+
+      // Check for invalid vowel sequences (more than 2 vowels in a row, unless it's a valid cluster)
+      let vowelCount = 0;
+      for (let i = 0; i < combination.length; i++) {
+        const char = combination[i];
+        const isVowel = 'aeiou'.includes(char);
+
+        if (isVowel) {
+          vowelCount++;
+          if (vowelCount > 2) {
+            // Check if the last 2-3 characters form a valid vowel cluster
+            const lastChars = combination.substring(
+              Math.max(0, i - 1),
+              i + 1
+            );
+            const lastThreeChars = combination.substring(
+              Math.max(0, i - 2),
+              i + 1
+            );
+
+            if (
+              !this.config.vowelClusters.includes(lastChars) &&
+              !this.config.vowelClusters.includes(lastThreeChars)
+            ) {
+              return false; // Too many vowels in a row without valid cluster
+            }
+          }
+        } else {
+          vowelCount = 0;
+        }
+      }
+
+      return true;
+    }
+
+    generateRandomString(chars, length) {
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return result;
+    }
+
+    updateProgress(generated, total) {
+      const percentage = Math.min((generated / total) * 100, 100);
+      document.getElementById('progressBar').style.width = percentage + '%';
+      document.getElementById('progressStats').textContent =
+        `${generated.toLocaleString()} domains generated`;
+
+      // Update progress message
+      const messageIndex = Math.floor(
+        (generated / total) * this.config.progressMessages.length
+      );
+      const message =
+        this.config.progressMessages[
+          Math.min(messageIndex, this.config.progressMessages.length - 1)
+          ];
+      document.getElementById('progressMessage').textContent = message;
+
+      // Force UI update
+      document.getElementById('progressStats').style.display = 'block';
+    }
+
+    shuffleArray(array) {
+      // Fisher-Yates shuffle with better randomization
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+
+      // Additional shuffle for better randomness
+      for (let i = 0; i < array.length; i++) {
+        const j = Math.floor(Math.random() * array.length);
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    displayResults() {
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      const pageResults = this.results.slice(startIndex, endIndex);
+
+      const grid = document.getElementById('resultsGrid');
+      grid.innerHTML = '';
+
+      pageResults.forEach((domain) => {
+        const card = this.createDomainCard(domain);
+        grid.appendChild(card);
+      });
+
+      this.updatePagination();
+      document.getElementById('resultsSection').classList.remove('hidden');
+    }
+
+    createDomainCard(domain, isLiked = false) {
+      const card = document.createElement('div');
+      card.className = isLiked
+        ? 'border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20 rounded-lg p-4'
+        : 'border border-gray-200 dark:border-gray-600 rounded-lg p-4 hover:shadow-lg transition-all duration-200 bg-white dark:bg-dark-800';
+
+      const likeClass = this.likedDomains.has(domain)
+        ? 'text-red-500'
+        : 'text-gray-300';
+      const likeIcon = isLiked
+        ? '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>'
+        : '<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg>';
+
+      card.innerHTML = `
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-mono text-lg font-semibold text-gray-900 dark:text-white break-all">${domain}</h3>
+              <button class="${isLiked ? 'remove-like-btn' : 'like-btn'} ${likeClass} hover:text-red-500 transition-colors" data-domain="${domain}" style="min-width: 24px; min-height: 24px;">
+                ${likeIcon}
+              </button>
+            </div>
+            ${this.createDomainLinks(domain)}
+          `;
+
+      // Bind events
+      const button = card.querySelector(
+        isLiked ? '.remove-like-btn' : '.like-btn'
+      );
+
+      button.addEventListener('click', () =>
+        isLiked ? this.removeLiked(domain) : this.toggleLike(domain, button)
+      );
+
+      return card;
+    }
+
+    createDomainLinks(domain) {
+      const providers = [
+        {
+          name: 'Namecheap',
+          url: `https://www.namecheap.com/domains/registration/results/?domain=${domain}`,
+          gradient:
+            'from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700',
+        },
+        {
+          name: 'Spaceship',
+          url: `https://www.spaceship.com/domain-search/?query=${domain}`,
+          gradient:
+            'from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',
+        },
+        {
+          name: 'Cloudflare',
+          url: `https://domains.cloudflare.com/?domain=${domain}`,
+          gradient:
+            'from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600',
+        },
+      ];
+
+      const links = providers
+        .map(
+          (provider) =>
+            `<a href="${provider.url}" target="_blank" class="text-xs bg-gradient-to-r ${provider.gradient} text-white px-2 py-1 rounded transition-all duration-200">${provider.name}</a>`
+        )
+        .join('');
+
+      return `
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-2 sm:space-y-0">
+              <div class="flex flex-wrap gap-1">${links}</div>
+            </div>
+          `;
+    }
+
+    toggleLike(domain, button) {
+      if (this.likedDomains.has(domain)) {
+        this.likedDomains.delete(domain);
+        button.classList.remove('text-red-500');
+        button.classList.add('text-gray-300');
+      } else {
+        this.likedDomains.add(domain);
+        button.classList.add('text-red-500');
+        button.classList.remove('text-gray-300');
+      }
+
+      this.saveLikedDomains();
+      this.updateLikedSection();
+    }
+
+    addCustomDomain() {
+      const input = document.getElementById('customDomain');
+      const domain = input.value.trim().toLowerCase();
+
+      if (!domain) {
+        alert('Please enter a domain name');
+        return;
+      }
+
+      // If no TLD is specified, add .com
+      const domainWithTld = domain.includes('.') ? domain : domain + '.com';
+      this.likedDomains.add(domainWithTld);
+      this.saveLikedDomains();
+      this.updateLikedSection();
+
+      input.value = '';
+    }
+
+    addCustomTld() {
+      const input = document.getElementById('customTldInput');
+      const tld = input.value.trim().toLowerCase();
+
+      if (!tld) {
+        alert('Please enter a TLD');
+        return;
+      }
+
+      // Add dot if not present
+      const formattedTld = tld.startsWith('.') ? tld : '.' + tld;
+
+      // Create a new checkbox for the custom TLD
+      const container =
+        input.parentElement.parentElement.querySelector('.grid');
+      const newLabel = document.createElement('label');
+      newLabel.className = 'flex items-center';
+      newLabel.innerHTML = `
+            <input type="checkbox" value="${formattedTld}" checked class="mr-2 rounded" />
+            <span class="text-sm">${formattedTld}</span>
+          `;
+      container.appendChild(newLabel);
+
+      input.value = '';
+    }
+
+    updateLikedSection() {
+      const likedSection = document.getElementById('likedSection');
+      const likedGrid = document.getElementById('likedGrid');
+
+      if (this.likedDomains.size > 0) {
+        likedGrid.innerHTML = '';
+        this.likedDomains.forEach((domain) => {
+          const card = this.createLikedDomainCard(domain);
+          likedGrid.appendChild(card);
+        });
+        likedSection.classList.remove('hidden');
+      } else {
+        likedSection.classList.add('hidden');
+      }
+    }
+
+    createLikedDomainCard(domain) {
+      const card = this.createDomainCard(domain, true);
+      const suggestions = this.generateSuggestions(domain);
+
+      if (suggestions.length > 0) {
+        const suggestionsDiv = document.createElement('div');
+        suggestionsDiv.className =
+          'border-t border-gray-200 dark:border-gray-600 pt-3 mt-3';
+
+        const title = document.createElement('p');
+        title.className = 'text-xs text-gray-500 dark:text-gray-400 mb-2';
+        title.textContent = 'Suggestions:';
+
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.className = 'flex flex-wrap gap-1';
+
+        suggestions.forEach((suggestion) => {
+          const button = document.createElement('button');
+          button.className =
+            'suggestion-btn text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors';
+          button.textContent = suggestion;
+          button.addEventListener('click', () =>
+            this.addSuggestion(suggestion)
+          );
+          buttonsContainer.appendChild(button);
+        });
+
+        suggestionsDiv.appendChild(title);
+        suggestionsDiv.appendChild(buttonsContainer);
+        card.appendChild(suggestionsDiv);
+      }
+
+      return card;
+    }
+
+    generateSuggestions(domain) {
+      const suggestions = [];
+      const baseDomain = domain.split('.')[0];
+      const tld = domain.split('.')[1] || 'com';
+
+      for (const [letter, replacement] of Object.entries(
+        this.config.substitutions
+      )) {
+        if (baseDomain.includes(letter)) {
+          const suggestion = baseDomain.replace(
+            new RegExp(letter, 'g'),
+            replacement
+          );
+          if (suggestion !== baseDomain) {
+            suggestions.push(suggestion + '.' + tld);
+          }
+        }
+      }
+
+      if (suggestions.length > 0) {
+        const shuffled = [...suggestions];
+        this.shuffleArray(shuffled);
+        return shuffled.slice(0, 3);
+      }
+      return [];
+    }
+
+    addSuggestion(suggestion) {
+      this.likedDomains.add(suggestion);
+      this.saveLikedDomains();
+      this.updateLikedSection();
+    }
+
+    removeLiked(domain) {
+      this.likedDomains.delete(domain);
+      this.saveLikedDomains();
+      this.updateLikedSection();
+
+      // Update the like button in results if visible
+      const likeBtn = document.querySelector(
+        `[data-domain="${domain}"].like-btn`
+      );
+      if (likeBtn) {
+        likeBtn.classList.remove('text-red-500');
+        likeBtn.classList.add('text-gray-300');
+      }
+    }
+
+    clearLikes() {
+      if (confirm('Are you sure you want to clear all liked domains?')) {
+        this.likedDomains.clear();
+        this.saveLikedDomains();
+        this.updateLikedSection();
+
+        // Update all like buttons in results
+        document.querySelectorAll('.like-btn').forEach((btn) => {
+          btn.classList.remove('text-red-500');
+          btn.classList.add('text-gray-300');
+        });
+      }
+    }
+
+    updateStats() {
+      document.getElementById('totalResults').textContent =
+        this.results.length.toLocaleString();
+    }
+
+    updatePagination() {
+      const totalPages = Math.ceil(this.results.length / this.itemsPerPage);
+
+      // Update all currentPage spans
+      Array.from(document.getElementsByClassName('currentPage')).forEach(
+        (el) => {
+          el.textContent = this.currentPage;
+        }
+      );
+
+      // Update all totalPages spans
+      Array.from(document.getElementsByClassName('totalPages')).forEach(
+        (el) => {
+          el.textContent = totalPages;
+        }
+      );
+
+      // Update all prevPage buttons
+      Array.from(document.getElementsByClassName('prevPage')).forEach(
+        (btn) => {
+          btn.disabled = this.currentPage === 1;
+        }
+      );
+
+      // Update all nextPage buttons
+      Array.from(document.getElementsByClassName('nextPage')).forEach(
+        (btn) => {
+          btn.disabled = this.currentPage === totalPages;
+        }
+      );
+    }
+
+    previousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+        this.displayResults();
+      }
+    }
+
+    nextPage() {
+      const totalPages = Math.ceil(this.results.length / this.itemsPerPage);
+      if (this.currentPage < totalPages) {
+        this.currentPage++;
+        this.displayResults();
+      }
+    }
+  }
+
+  // Initialize the app
+  document.addEventListener('DOMContentLoaded', () => {
+    new DomainForge();
+  });
+</script>
+</body>
+</html>
