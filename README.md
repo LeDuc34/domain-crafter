@@ -5,6 +5,8 @@ Domain Crafter is a single-page web tool to help you generate creative, brandabl
 - **Live site:** [domain.1crafter.site](https://domain.1crafter.site)
 - **Repository:** [DmitrySadovnikov/domain-crafter](https://github.com/DmitrySadovnikov/domain-crafter)
 
+<img width="1692" height="827" alt="Screenshot 2025-08-09 at 11 22 35 am" src="https://github.com/user-attachments/assets/1d40d2ca-4740-4126-a1c2-40b3fb27c6cd" />
+
 ## Features
 - AI-powered domain name generation
 - Customizable length, TLDs, and options
